@@ -4,66 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sadikur Rahman Shojib - Portfolio</title>
+    
+    <!-- Google Fonts: Playfair Display for Headings, Poppins for Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* CSS Variables */
+        /* CSS Variables / Theme Colors */
         :root {
-            --primary-color: #1e293b;
-            --secondary-color: #64748b;
-            --accent-color: #0ea5e9; /* Light blue for icons/links */
+            --primary-color: #000000;
+            --secondary-color: #788293; /* Grayish blue for subtitle */
+            --accent-color: #0ea5e9; /* Light blue for icons */
             --bg-color: #ffffff;
-            --curve-bg: #e2e8f0; /* Light grayish blue for the curve */
+            --curve-bg: #e9eff5; /* Very light blue/gray for the curve */
         }
 
-        /* Basic Reset & Typography */
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        h1, h2, h3, .logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ================= Navigation ================= */
         nav {
-            position: absolute; /* Changed to absolute to float over background */
+            position: absolute;
             top: 0;
             width: 100%;
-            padding: 1.5rem 5%;
+            padding: 2rem 8%;
             z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* Logo Style */
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
             letter-spacing: 2px;
+            color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 2px;
+        }
+        
+        .logo-sub {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-top: 5px;
+            display: block;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             text-decoration: none;
             color: var(--primary-color);
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 400;
+            font-size: 0.95rem;
             text-transform: uppercase;
             transition: color 0.3s;
         }
@@ -72,26 +94,24 @@
             color: var(--accent-color);
         }
 
-        /* =========================================
-           HERO SECTION (ছবির মত ডিজাইন করা হয়েছে)
-           ========================================= */
+        /* ================= Hero Section ================= */
         .hero {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 5%;
+            padding: 0 8%;
             overflow: hidden;
         }
 
-        /* Curved Background */
+        /* The Curved Background */
         .hero::before {
             content: '';
             position: absolute;
-            top: -10%;
-            right: -20%;
-            width: 65%;
-            height: 120%;
+            top: -20%;
+            right: -15%;
+            width: 60%;
+            height: 140%;
             background-color: var(--curve-bg);
             border-radius: 50% 0 0 50%;
             z-index: 0;
@@ -102,11 +122,11 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             position: relative;
-            z-index: 1; /* Keep above curved background */
-            margin-top: 60px;
+            z-index: 1;
+            margin-top: 80px;
         }
 
         .hero-left {
@@ -116,7 +136,7 @@
 
         .greeting {
             color: var(--secondary-color);
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
@@ -127,25 +147,24 @@
         }
 
         .hero-left h1 {
-            font-family: 'Georgia', serif; /* Serif font like the screenshot */
-            font-size: 3.5rem;
-            color: #000000;
-            line-height: 1.2;
+            font-size: 4rem;
+            color: var(--primary-color);
+            line-height: 1.1;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         .hero-left h2 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--secondary-color);
             font-weight: 600;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
-        /* Contact Info List in Hero */
         .hero-contact {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .hero-contact a {
@@ -154,8 +173,9 @@
             font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
             transition: color 0.3s;
+            font-weight: 400;
         }
 
         .hero-contact a:hover {
@@ -164,7 +184,7 @@
 
         .hero-contact i {
             color: var(--accent-color);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             width: 25px;
             text-align: center;
         }
@@ -176,103 +196,117 @@
             align-items: center;
         }
 
+        /* Profile Picture Styling */
         .hero-image {
-            width: 450px;
-            height: 450px;
+            width: 480px;
+            height: 480px;
             border-radius: 50%;
             object-fit: cover;
-            border: 10px solid #e2e8f0; /* Matches the curve background */
-            box-shadow: -10px 10px 30px rgba(0,0,0,0.1);
+            border: 12px solid #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background-color: #ddd; /* Placeholder background */
         }
 
-        /* Main Sections Layout */
+        /* ================= Content Sections ================= */
         section {
-            padding: 80px 5%;
-            max-width: 1200px;
+            padding: 100px 8%;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             text-align: center;
-            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+            position: relative;
         }
 
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
         }
 
-        .skill-card {
-            background: #f8fafc;
-            padding: 2rem;
+        /* Content Boxes */
+        .content-box {
+            background: #f9fafb;
+            padding: 3rem;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-            border-top: 3px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            margin-bottom: 2rem;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
+        .content-box p {
+            color: #4b5563;
+            font-size: 1.1rem;
+            line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        /* Contact Section below */
-        .contact-info {
-            text-align: center;
-            background: #f8fafc;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        /* CV / Education Grid */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
+        .cv-item {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
         }
 
-        .btn:hover {
-            background-color: #0284c7;
+        .cv-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .cv-item span {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 1rem;
         }
 
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            background-color: var(--primary-color);
-            color: white;
+            padding: 3rem 8%;
+            background-color: #f1f5f9;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
         }
 
-        /* =========================================
-           MOBILE RESPONSIVE STYLES 
-           ========================================= */
-        @media (max-width: 992px) {
-            .hero-left h1 { font-size: 2.8rem; }
-            .hero-left h2 { font-size: 1.4rem; }
-            .hero-image { width: 350px; height: 350px; }
+        /* ================= Mobile Responsive ================= */
+        @media (max-width: 1024px) {
+            .hero-left h1 { font-size: 3rem; }
+            .hero-left h2 { font-size: 1.8rem; }
+            .hero-image { width: 380px; height: 380px; }
         }
 
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
-                gap: 1rem;
-                background-color: rgba(255, 255, 255, 0.95);
+                gap: 1.5rem;
+                padding: 1.5rem;
+                background-color: rgba(255, 255, 255, 0.98);
                 position: relative;
             }
             
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
             .hero {
                 padding-top: 2rem;
                 min-height: auto;
@@ -281,14 +315,14 @@
 
             .hero::before {
                 top: 0;
-                right: -50%;
-                width: 200%;
+                right: -20%;
+                width: 140%;
                 height: 100%;
                 border-radius: 0 0 50% 50%;
             }
 
             .hero-container {
-                flex-direction: column-reverse; /* ছবি উপরে, লেখা নিচে */
+                flex-direction: column-reverse;
                 text-align: center;
                 gap: 3rem;
                 margin-top: 0;
@@ -307,99 +341,155 @@
             }
 
             .hero-image {
-                width: 280px;
-                height: 280px;
-                border: 5px solid white;
+                width: 300px;
+                height: 300px;
+                border-width: 8px;
+            }
+
+            section {
+                padding: 60px 5%;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <div class="logo">S | R</div>
+        <div class="logo">
+            <!-- [Your Initials or Logo Text] -->
+            <div class="logo-text">[S | R]</div> 
+            <span class="logo-sub">Sadikur Rahman Shojib</span>
+        </div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- নতুন হিরো সেকশন -->
+    <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-container">
             <div class="hero-left">
-                <span class="greeting">Hello, my name is</span>
-                <h1>Sadikur Rahman Shojib</h1>
-                <h2>Web Developer & Campaign Manager</h2>
+                <span class="greeting">HELLO, MY NAME IS</span>
+                
+                <!-- [Your Full Name] -->
+                <h1>Sadikur Rahman Shojib</h1> 
+                
+                <!-- [Your Title/Profession] -->
+                <h2>[Your Profession / Title]</h2> 
                 
                 <div class="hero-contact">
-                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> shojibb493@gmail.com</a>
-                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> Sadikur Rahman Shojib</a>
-                    <a href="tel:+8801700000000"><i class="fas fa-phone-alt"></i> +880 1728966047</a>
+                    <!-- [Your Email Address] -->
+                    <a href="mailto:[your.email@example.com]"><i class="fas fa-envelope"></i> shojibb493@gmail.com</a>
+                    
+                    <!-- [Your LinkedIn Name/Link] -->
+                    <a href="[Your LinkedIn URL]" target="_blank"><i class="fab fa-linkedin"></i> [Your LinkedIn Name]</a>
+                    
+                    <!-- [Your Phone Number] -->
+                    <a href="tel:[+8801XXXXXXXXX]"><i class="fas fa-phone-alt"></i> [+880 1728966047]</a>
                 </div>
             </div>
             <div class="hero-right">
-                <!-- আপনার ছবিটি এখানে শো করবে -->
-                <img src="profile.jpg" alt="Sadikur Rahman Shojib" class="hero-image">
+                <!-- [Upload your picture in GitHub and name it profile.jpg] -->
+                <img src="profile.jpg" alt="[Your Name]" class="hero-image">
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-                Based in Dhaka, Bangladesh, I specialize in bridging the gap between technical web development and effective digital operations. 
+        <h2 class="section-title">About Me</h2>
+        <div class="content-box">
+            <!-- [Write your About Me text here] -->
+            <p>
+                [I am a passionate and dedicated professional based in... Write a few paragraphs about yourself, your background, and your career goals here. This is the place to let your personality and professional ethos shine through.]
             </p>
-            <p style="font-size: 1.1rem;">
-                Whether it is writing clean code to build responsive websites, managing targeted Meta ad campaigns for e-commerce, or streamlining data entry and daily operations, I bring a detail-oriented and problem-solving mindset to every project.
+            <p>
+                [Second paragraph of your about section. Mention what drives you, what kind of problems you like solving, or what you are currently focusing on.]
             </p>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>What I Do</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Web Development</h3>
-                <p>Building responsive, user-friendly websites using modern web technologies, HTML, CSS, and JavaScript frameworks.</p>
+    <!-- Activities / Skills Section -->
+    <section id="activities">
+        <h2 class="section-title">Activities & Skills</h2>
+        <div class="cv-grid">
+            <!-- Skill Box 1 -->
+            <div class="cv-item">
+                <h3>[Skill / Activity Title 1]</h3>
+                <p>[Describe your experience or proficiency in this specific skill, tool, or activity. Keep it brief and impactful.]</p>
             </div>
-            <div class="skill-card">
-                <h3>Digital Marketing</h3>
-                <p>Executing targeted promotional campaigns, managing Facebook/Meta Ads, and driving engagement for apparel and retail brands.</p>
+            <!-- Skill Box 2 -->
+            <div class="cv-item">
+                <h3>[Skill / Activity Title 2]</h3>
+                <p>[Describe your experience or proficiency in this specific skill, tool, or activity. Keep it brief and impactful.]</p>
             </div>
-            <div class="skill-card">
-                <h3>Data & Operations</h3>
-                <p>Ensuring smooth day-to-day digital operations, managing data entry workflows, and maintaining accurate system records.</p>
+            <!-- Skill Box 3 -->
+            <div class="cv-item">
+                <h3>[Skill / Activity Title 3]</h3>
+                <p>[Describe your experience or proficiency in this specific skill, tool, or activity. Keep it brief and impactful.]</p>
             </div>
         </div>
     </section>
 
+    <!-- CV / Education Section -->
+    <section id="cv">
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <div class="content-box">
+            
+            <h3 style="margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Education</h3>
+            <div class="cv-grid">
+                <!-- Education Item 1 -->
+                <div class="cv-item">
+                    <h3>[Degree Name, e.g., B.Sc in Computer Science]</h3>
+                    <span>[University / College Name] | [Year - Year]</span>
+                    <p>[Optional: Mention any notable achievements, CGPA, or thesis topic here.]</p>
+                </div>
+                
+                <!-- Education Item 2 -->
+                <div class="cv-item">
+                    <h3>[Degree Name, e.g., Higher Secondary Certificate]</h3>
+                    <span>[College Name] | [Year - Year]</span>
+                    <p>[Optional: Mention any notable achievements or your group/major here.]</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">Experience</h3>
+            <div class="cv-grid">
+                <!-- Experience Item 1 -->
+                <div class="cv-item">
+                    <h3>[Job Title, e.g., Web Developer Intern]</h3>
+                    <span>[Company Name] | [Month Year - Present]</span>
+                    <p>[Briefly describe your responsibilities and achievements in this role.]</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Let's Connect</h2>
-        <div class="contact-info">
-            <p><strong>Location:</strong> Dhaka Division, Bangladesh</p>
-            <p><strong>Email:</strong> your.email@example.com</p>
-            <a href="mailto:your.email@example.com" class="btn">Send me an Email</a>
+        <h2 class="section-title">Contact</h2>
+        <div class="content-box" style="text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Let's Work Together</h3>
+            <p>[Feel free to reach out for collaborations or just a friendly hello!]</p>
+            
+            <div style="margin-top: 2rem; line-height: 2;">
+                <p><strong><i class="fas fa-map-marker-alt" style="color: var(--accent-color); width: 25px;"></i> Address:</strong> [Your Full Address / Location Here]</p>
+                <p><strong><i class="fas fa-envelope" style="color: var(--accent-color); width: 25px;"></i> Email:</strong> [your.email@example.com]</p>
+                <p><strong><i class="fas fa-phone-alt" style="color: var(--accent-color); width: 25px;"></i> Phone:</strong> [+880 1XX XXX XXXX]</p>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Sadikur Rahman Shojib. All rights reserved.</p>
+        <p>&copy; 2026 Sadikur Rahman Shojib. All Rights Reserved.</p>
     </footer>
 
-    <!-- Smooth Scrolling Script -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
